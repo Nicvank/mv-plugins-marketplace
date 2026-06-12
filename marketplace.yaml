@@ -1,6 +1,6 @@
 # Memory Visions 插件市场索引
 # 此文件定义了市场中可用的插件列表
-# source_type: github (独立仓库) | embedded (本仓库内) | local (本地路径)
+# source_type: github (独立仓库) | embedded (本仓库内)
 
 name: "Official Memory Visions Plugins"
 description: "官方插件市场 — 记忆碎片应用的扩展插件集合"
@@ -11,6 +11,18 @@ plugins:
   - name: "heatmap"
     display_name: "记忆热力图"
     description: "GitHub 风格的日历热力图，可视化记忆活动分布"
+    long_description: |
+      记忆热力图插件为 Memory Visions 提供 GitHub 贡献图风格的日历可视化。
+
+      ## 功能特性
+      - 📅 按年/月展示记忆活动热力图
+      - 🎨 支持多种配色方案（绿色、蓝色、紫色、暖色）
+      - 😊 在热力图中显示情绪颜色
+      - 📊 悬停查看每日记忆详情
+      - 📱 响应式设计，支持移动端
+
+      ## 使用方法
+      启用插件后，侧边栏会出现「热力图」入口。点击进入即可查看你的记忆活动分布。
     version: "1.4.0"
     author: "Memory Visions Team"
     type: "visualization"
@@ -18,11 +30,34 @@ plugins:
     icon: "📈"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-heatmap"
+    homepage: "https://github.com/Nicvank/mv-plugin-heatmap"
     tags: ["可视化", "日历", "热力图"]
+    screenshots:
+      - "https://raw.githubusercontent.com/Nicvank/mv-plugin-heatmap/main/screenshots/heatmap.png"
+    changelog: |
+      v1.4.0 - 新增暖色配色方案
+      v1.3.0 - 支持情绪颜色显示
+      v1.2.0 - 新增月度视图
+      v1.1.0 - 响应式布局优化
+      v1.0.0 - 首次发布
 
   - name: "data-export"
     display_name: "数据导出"
     description: "支持 JSON/CSV/Markdown 等多格式数据导出"
+    long_description: |
+      数据导出插件让你可以将记忆数据导出为多种格式，方便备份和迁移。
+
+      ## 支持格式
+      - **JSON** — 完整数据结构，适合程序处理
+      - **CSV** — 表格格式，可用 Excel 打开
+      - **Markdown** — 可读性强，适合文档归档
+      - **HTML** — 带样式的网页格式
+
+      ## 功能特性
+      - 📦 批量导出所有记忆
+      - 🔍 按时间范围、标签、人物筛选
+      - 📊 包含统计摘要
+      - 🔒 导出数据脱敏选项
     version: "1.0.0"
     author: "Memory Visions Team"
     type: "tool"
@@ -30,11 +65,27 @@ plugins:
     icon: "📦"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-data-export"
+    homepage: "https://github.com/Nicvank/mv-plugin-data-export"
     tags: ["导出", "数据", "备份"]
+    screenshots: []
+    changelog: |
+      v1.0.0 - 首次发布，支持 JSON/CSV/Markdown/HTML
 
   - name: "stats-dashboard"
     display_name: "统计仪表盘"
     description: "记忆数据统计分析，图表展示趋势和分布"
+    long_description: |
+      统计仪表盘为你的记忆数据提供全方位的分析视图。
+
+      ## 分析维度
+      - 📈 **时间趋势** — 记忆数量随时间的变化
+      - 😊 **情绪分布** — 各种情绪的占比分析
+      - 👥 **人物关系** — 与各人物的互动频率
+      - 🏷️ **标签云** — 最常使用的标签
+
+      ## 图表类型
+      - 折线图、柱状图、饼图、雷达图
+      - 支持按日/周/月/年切换时间粒度
     version: "1.0.0"
     author: "Memory Visions Team"
     type: "analytics"
@@ -42,11 +93,30 @@ plugins:
     icon: "📊"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-stats-dashboard"
+    homepage: "https://github.com/Nicvank/mv-plugin-stats-dashboard"
     tags: ["统计", "图表", "分析"]
+    screenshots: []
+    changelog: |
+      v1.0.0 - 首次发布
 
   - name: "theme-customizer"
     display_name: "主题定制器"
     description: "自定义应用主题颜色、字体、CSS 变量"
+    long_description: |
+      主题定制器让你完全掌控 Memory Visions 的视觉风格。
+
+      ## 自定义内容
+      - 🎨 **颜色方案** — 主色、背景色、文字色等 20+ CSS 变量
+      - ✏️ **字体** — 上传自定义字体或选择预设字体
+      - 🌙 **深色/浅色** — 内置多套主题一键切换
+      - 💅 **自定义 CSS** — 高级用户可直接编写 CSS
+
+      ## 预设主题
+      - Default（默认）
+      - Midnight（午夜深蓝）
+      - Forest（森林绿）
+      - Sunset（日落橙）
+      - Lavender（薰衣草紫）
     version: "1.0.0"
     author: "Memory Visions Team"
     type: "theme"
@@ -54,4 +124,8 @@ plugins:
     icon: "🎨"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-theme-customizer"
-    tags: ["主题", "颜色", "自定义"]
+    homepage: "https://github.com/Nicvank/mv-plugin-theme-customizer"
+    tags: ["主题", "颜色", "自定义", "字体"]
+    screenshots: []
+    changelog: |
+      v1.0.0 - 首次发布，支持主题切换、颜色自定义、字体上传
