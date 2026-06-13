@@ -4,37 +4,37 @@
 
 name: "Official Memory Visions Plugins"
 description: "官方插件市场 — 记忆碎片应用的扩展插件集合"
-version: "1.0.0"
+version: "2.0.0"
 homepage: "https://github.com/Nicvank/mv-plugins-marketplace"
 
 plugins:
   - name: "heatmap"
     display_name: "记忆热力图"
-    description: "GitHub 风格的日历热力图，可视化记忆活动分布"
+    description: "GitHub 风格的日历热力图，按年/月/日三级视图展示记忆活动分布"
     long_description: |
       记忆热力图插件为 Memory Visions 提供 GitHub 贡献图风格的日历可视化。
 
       ## 功能特性
-      - 📅 按年/月展示记忆活动热力图
-      - 🎨 支持多种配色方案（绿色、蓝色、紫色、暖色）
-      - 😊 在热力图中显示情绪颜色
-      - 📊 悬停查看每日记忆详情
-      - 📱 响应式设计，支持移动端
+      - 📅 三级视图：年→月→日，逐级钻取
+      - 🎨 4 种配色方案：绿色、蓝色、紫色、暖色
+      - 😊 悬停显示每日记忆数和主导情绪
+      - ⚙️ 可配置情绪显示、年份范围
+      - 📱 响应式设计，移动端横向滚动
 
       ## 使用方法
-      启用插件后，侧边栏会出现「热力图」入口。点击进入即可查看你的记忆活动分布。
-    version: "1.4.0"
+      启用插件后，侧边栏会出现「记忆热力图」入口。点击年份可钻取到月份视图，点击月份可查看日历。
+    version: "2.0.0"
     author: "Memory Visions Team"
     type: "visualization"
     license: "MIT"
-    icon: "📈"
+    icon: "calendar"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-heatmap"
     homepage: "https://github.com/Nicvank/mv-plugin-heatmap"
     tags: ["可视化", "日历", "热力图"]
-    screenshots:
-      - "https://raw.githubusercontent.com/Nicvank/mv-plugin-heatmap/main/screenshots/heatmap.png"
+    screenshots: []
     changelog: |
+      v2.0.0 - 完全重构：新增 Vue 前端组件、配置系统生效、SVG 图标、日视图
       v1.4.0 - 新增暖色配色方案
       v1.3.0 - 支持情绪颜色显示
       v1.2.0 - 新增月度视图
@@ -43,89 +43,98 @@ plugins:
 
   - name: "data-export"
     display_name: "数据导出"
-    description: "支持 JSON/CSV/Markdown 等多格式数据导出"
+    description: "将记忆、人物、关系数据导出为 JSON、CSV 或 Markdown 格式"
     long_description: |
       数据导出插件让你可以将记忆数据导出为多种格式，方便备份和迁移。
 
       ## 支持格式
       - **JSON** — 完整数据结构，适合程序处理
-      - **CSV** — 表格格式，可用 Excel 打开
+      - **CSV** — 表格格式，可用 Excel 打开（UTF-8 BOM）
       - **Markdown** — 可读性强，适合文档归档
-      - **HTML** — 带样式的网页格式
 
       ## 功能特性
-      - 📦 批量导出所有记忆
-      - 🔍 按时间范围、标签、人物筛选
-      - 📊 包含统计摘要
-      - 🔒 导出数据脱敏选项
-    version: "1.0.0"
+      - 📦 批量导出记忆、人物、关系
+      - 🔍 按时间范围、人物筛选
+      - 📋 导出历史记录
+      - ⚙️ 可配置默认格式和叙事包含
+    version: "2.0.0"
     author: "Memory Visions Team"
     type: "tool"
     license: "MIT"
-    icon: "📦"
+    icon: "export_icon"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-data-export"
     homepage: "https://github.com/Nicvank/mv-plugin-data-export"
     tags: ["导出", "数据", "备份"]
     screenshots: []
     changelog: |
-      v1.0.0 - 首次发布，支持 JSON/CSV/Markdown/HTML
+      v2.0.0 - 完全重构：新增 Vue 导出表单 UI、配置系统生效、SVG 图标、下载历史
+      v1.1.0 - API 修复
+      v1.0.0 - 首次发布
 
   - name: "stats-dashboard"
     display_name: "统计仪表盘"
-    description: "记忆数据统计分析，图表展示趋势和分布"
+    description: "记忆数据统计分析，卡片图表展示趋势和分布"
     long_description: |
       统计仪表盘为你的记忆数据提供全方位的分析视图。
 
       ## 分析维度
-      - 📈 **时间趋势** — 记忆数量随时间的变化
-      - 😊 **情绪分布** — 各种情绪的占比分析
-      - 👥 **人物关系** — 与各人物的互动频率
-      - 🏷️ **标签云** — 最常使用的标签
+      - 📈 **概览** — 记忆总数、人物数、关系数、时间跨度
+      - 😊 **情感分布** — 各种情绪的占比和月度变化
+      - 📅 **时间线** — 按周/月/年统计记忆数量
+      - 👥 **人物频率** — 最常出现的人物排行
+      - 🏷️ **标签分布** — 最常使用的标签和分类
 
       ## 图表类型
-      - 折线图、柱状图、饼图、雷达图
-      - 支持按日/周/月/年切换时间粒度
-    version: "1.0.0"
+      - 纯 CSS 柱状图、标签云、排行列表
+      - 支持按周/月/年/全部切换时间粒度
+    version: "2.0.0"
     author: "Memory Visions Team"
     type: "analytics"
     license: "MIT"
-    icon: "📊"
+    icon: "chart"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-stats-dashboard"
     homepage: "https://github.com/Nicvank/mv-plugin-stats-dashboard"
     tags: ["统计", "图表", "分析"]
     screenshots: []
     changelog: |
+      v2.0.0 - 完全重构：新增 Vue 仪表盘 UI、配置系统生效、SVG 图标、CSS 图表
+      v1.1.0 - API 修复
       v1.0.0 - 首次发布
 
   - name: "theme-customizer"
-    display_name: "主题定制器"
-    description: "自定义应用主题颜色、字体、CSS 变量"
+    display_name: "主题自定义"
+    description: "自定义应用主题颜色、字体、CSS 变量，支持 5 个预设主题"
     long_description: |
-      主题定制器让你完全掌控 Memory Visions 的视觉风格。
-
-      ## 自定义内容
-      - 🎨 **颜色方案** — 主色、背景色、文字色等 20+ CSS 变量
-      - ✏️ **字体** — 上传自定义字体或选择预设字体
-      - 🌙 **深色/浅色** — 内置多套主题一键切换
-      - 💅 **自定义 CSS** — 高级用户可直接编写 CSS
+      主题自定义插件让你完全掌控 Memory Visions 的视觉风格。
 
       ## 预设主题
-      - Default（默认）
-      - Midnight（午夜深蓝）
-      - Forest（森林绿）
-      - Sunset（日落橙）
-      - Lavender（薰衣草紫）
-    version: "1.0.0"
+      - 🌞 **默认** — 清爽蓝色
+      - 🌙 **暗黑** — 深色护眼
+      - 🔥 **暖色** — 温暖橙色
+      - 🌿 **自然** — 森林绿色
+      - 🌊 **海洋** — 海洋蓝色
+
+      ## 自定义内容
+      - 🎨 **颜色** — 20+ CSS 变量，颜色选择器编辑
+      - ✏️ **自定义 CSS** — 直接编写 CSS 代码
+      - 🔤 **字体管理** — 上传自定义字体（TTF/OTF/WOFF/WOFF2）
+      - 📦 **导入/导出** — 主题配置文件导入导出
+    version: "2.0.0"
     author: "Memory Visions Team"
     type: "theme"
     license: "MIT"
-    icon: "🎨"
+    icon: "palette"
     source_type: "github"
     source_url: "https://github.com/Nicvank/mv-plugin-theme-customizer"
     homepage: "https://github.com/Nicvank/mv-plugin-theme-customizer"
     tags: ["主题", "颜色", "自定义", "字体"]
     screenshots: []
     changelog: |
-      v1.0.0 - 首次发布，支持主题切换、颜色自定义、字体上传
+      v2.0.0 - 完全重构：新增 Vue 主题编辑器 UI、安全修复、持久化、SVG 图标
+      v1.4.0 - 字体上传功能
+      v1.3.0 - 自定义 CSS 支持
+      v1.2.0 - 主题导入导出
+      v1.1.0 - 多主题预设
+      v1.0.0 - 首次发布
